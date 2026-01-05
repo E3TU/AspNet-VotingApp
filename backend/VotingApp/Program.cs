@@ -1,7 +1,4 @@
-using Microsoft.Extensions.ObjectPool;
-
 var builder = WebApplication.CreateBuilder(args);
-
 
 var app = builder.Build();
 
