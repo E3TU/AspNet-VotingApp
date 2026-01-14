@@ -1,5 +1,7 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
+	import '@fontsource-variable/geologica';
+	import "../app.css";
 
 	let { children } = $props();
 </script>
