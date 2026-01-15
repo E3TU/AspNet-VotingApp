@@ -1,27 +1,29 @@
 <script lang="ts">
 	import Topbar from '../../components/Topbar.svelte';
+	import AuthCard from '../../components/AuthCard.svelte';
 </script>
 
-<div class="register-container">
+<div class="register-page">
 	<Topbar />
-	<div class="register-form-container">
-		<form id="register-form">
-			<h1 class="register-form-heading">Create an account</h1>
-			<label for="username">Username</label>
-			<input id="username" placeholder="Enter username" />
-			<label for="email">Email</label>
-			<input id="email" placeholder="Enter email" />
-			<label for="password">Password</label>
-			<input id="password" placeholder="Enter password" />
-			<label for="confirm-password">Confirm Password</label>
-			<input id="confirm-password" placeholder="Confirm password" />
-			<button id="register-btn">Register</button>
-		</form>
-	</div>
+	<AuthCard title="Create an account">
+		{#snippet children()}
+			<form id="register-form">
+				<label for="username">Username</label>
+				<input id="username" placeholder="Enter username" />
+				<label for="email">Email</label>
+				<input id="email" placeholder="Enter email" />
+				<label for="password">Password</label>
+				<input id="password" placeholder="Enter password" />
+				<label for="confirm-password">Confirm Password</label>
+				<input id="confirm-password" placeholder="Confirm password" />
+				<button id="register-btn">Register</button>
+			</form>
+		{/snippet}
+	</AuthCard>
 </div>
 
 <style>
-	.register-container {
+	.register-page {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -33,30 +35,12 @@
 		background-position: center;
 		background-size: contain;
 	}
-	.register-form-container {
-		display: flex;
-		margin-top: 15rem;
-		width: 35rem;
-		height: 45rem;
-		background-color: var(--nord-dark);
-		box-shadow:
-			inset 2px 2px 5px rgba(0, 0, 0, 0.2),
-			inset -2px -2px 5px rgba(255, 255, 255, 0.1),
-			5px 5px 10px rgba(0, 0, 0, 0.3),
-			-5px -5px 10px rgba(255, 255, 255, 0.1);
-            border: none;
-		border-radius: 15px;
-	}
 	#register-form {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		width: 100%;
 		height: auto;
-	}
-	.register-form-heading {
-		margin-top: 3rem;
-		color: white;
 	}
 	label {
 		margin-top: 2rem;
