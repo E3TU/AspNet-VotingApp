@@ -31,6 +31,6 @@
 	}
 	.title {
 		margin-top: 3rem;
-		color: white;
+		color: var(--text-primary);
 	}
 </style>
