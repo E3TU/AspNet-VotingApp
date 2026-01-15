@@ -2,7 +2,7 @@
 
 <style>
 	.topbar {
-		width: 95%;
+		width: 98%;
 		height: 5rem;
 		margin-top: 1rem;
 		border-radius: 15px;
