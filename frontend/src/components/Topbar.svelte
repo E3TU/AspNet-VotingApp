@@ -1,4 +1,4 @@
-<div class="topbar"></div>
+<header class="topbar"></header>
 
 <style>
 	.topbar {
