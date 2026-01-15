@@ -5,6 +5,7 @@
 
 <div class="register-page">
 	<Topbar />
+	<h3 class="already-user">Already have an account?&nbsp<a class="login">Log In</a></h3>
 	<AuthCard title="Create an account">
 		{#snippet children()}
 			<form id="register-form">
@@ -35,6 +36,16 @@
 		background-position: center;
 		background-size: contain;
 	}
+	.already-user {
+		color: var(--text-primary);
+		margin-left: auto;
+		margin-right: 2rem;
+		margin-top: 1rem;
+	}
+	.login{
+		color: var(--neon);
+		cursor: pointer;
+	}
 	#register-form {
 		display: flex;
 		flex-direction: column;
@@ -47,15 +58,15 @@
 		margin-bottom: 1rem;
 		text-align: left !important;
 		width: 20rem;
-		color: white;
+		color: var(--text-primary);
 	}
 	input {
 		width: 20rem;
 		border-radius: 30px;
-		border: none;
+		border: 2px solid transparent;
 		padding: 1rem;
 		background-color: var(--nord-dark);
-		color: white;
+		color: var(--text-primary);
 		outline: none;
 		font-size: 1rem;
 		box-shadow:
@@ -63,6 +74,17 @@
 			inset -2px -2px 5px rgba(255, 255, 255, 0.055),
 			5px 5px 10px rgba(0, 0, 0, 0.3),
 			-5px -5px 10px rgba(255, 255, 255, 0.054);
+		transition: 0.1s;
+	}
+	input::placeholder {
+		color: var(--text-secondary);
+	}
+	input:focus {
+		border: 2px solid var(--neon);
+		box-shadow:
+			0 0 20px var(--neon-glow),
+			inset 0 1px 6px var(--neon-glow);
+		transition: 0.1s;
 	}
 	#register-btn {
 		width: 20rem;
