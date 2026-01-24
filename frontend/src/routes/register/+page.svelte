@@ -17,13 +17,20 @@
 			type: 'password',
 			placeholder: 'Enter password',
 			required: true
+		},
+		{
+			name: 'confirmpassword',
+			label: 'Confirmpassword',
+			type: 'confirmpassword',
+			placeholder: 'Confirm password',
+			required: true
 		}
 	];
 </script>
 
 <div class="register-page">
 	<Topbar />
-	<AuthCard title="Login" fields={registerFields}></AuthCard>
+	<AuthCard title="Register" fields={registerFields}></AuthCard>
 </div>
 
 <style>
