@@ -25,6 +25,7 @@
 		"vite": "^7.2.6"
 	},
 	"dependencies": {
-		"@fontsource-variable/geologica": "^5.2.8"
+		"@fontsource-variable/geologica": "^5.2.8",
+		"@iconify/svelte": "^5.2.1"
 	}
 }
