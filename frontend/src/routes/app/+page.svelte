@@ -8,12 +8,19 @@
 <MainContainer>
 	<Topbar></Topbar>
 	<div class="container">
-		<div class="big-box">
-			<h1>Active Polls</h1>
-			<div class="poll-container">
-				<div class="poll">
-					<h2>{pollTitle}</h2>
-				</div>
+		<div class="poll-container">
+			<h1 class="main-title">Active Polls</h1>
+			<div class="poll">
+				<h1 class="poll-title">{pollTitle}</h1>
+				<p class="poll-description">Test test test 1234</p>
+				<button class="vote-btn">Choice A</button>
+				<button class="vote-btn">Choice B</button>
+			</div>
+			<div class="poll">
+				<h1 class="poll-title">{pollTitle}</h1>
+			</div>
+			<div class="poll">
+				<h1 class="poll-title">{pollTitle}</h1>
 			</div>
 		</div>
 		<div class="right-side">
@@ -28,14 +35,14 @@
 	.container {
 		margin-top: 5rem;
 		/* background-color: var(--nord-dark); */
-		height: 60rem;
+		height: 65rem;
 		width: 120rem;
 		display: flex;
 		justify-content: space-between;
 		gap: 2rem;
 		border-radius: 18px;
 	}
-	.big-box {
+	.poll-container {
 		flex: 1;
 		background-color: var(--nord-dark);
 		border-radius: 18px;
@@ -48,29 +55,44 @@
 		box-shadow:
 			2px 2px 10px #115c33,
 			-2px -2px 10px #45ffcb;
-	}
-	.big-box h1 {
-		color: var(--text-primary);
-		margin: 2rem;
-	}
-	.big-box h2 {
-		color: var(--text-primary);
-		margin: 2rem;
-	}
-	.poll-container {
-		display: flex;
+
+			display: flex;
 		flex-direction: column;
 		align-items: center;
-		flex: 1;
+		gap: 2rem;
+	}
+	.main-title {
+		color: var(--text-primary);
+		margin: 2rem;
 	}
 	.poll {
 		height: 17rem;
 		width: 90%;
 		background-color: var(--nord-dark);
-		box-shadow:
-			1px 1px 5px #115c33,
-			-1px -1px 5px #45ffcb;
-			border-radius: 12px;
+		box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+		border-radius: 12px;
+		border: 2px solid transparent;
+		background:
+			linear-gradient(to right, var(--nord-dark), var(--nord-dark)) padding-box,
+			linear-gradient(to right, var(--neon), var(--neon-glow)) border-box;
+		background-clip: padding-box, border-box;
+		background-origin: padding-box, border-box;
+		padding: 2rem;
+	}
+	.poll-title {
+		color: var(--text-primary);
+	}
+	.poll-description {
+		color: var(--text-secondary);
+	}
+	.vote-btn{
+		margin-top: 1rem;
+		margin-right: 1rem;
+		padding: 1rem 5rem;
+		font-size: 1rem;
+		background-color: var(--neon);
+		border: none;
+		border-radius: 30px;
 	}
 	.right-side {
 		display: flex;
