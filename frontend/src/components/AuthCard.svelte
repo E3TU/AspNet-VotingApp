@@ -52,11 +52,8 @@
 		width: 35rem;
 		height: 45rem;
 		background-color: var(--nord-dark);
-		box-shadow:
-			inset 2px 2px 5px rgba(0, 0, 0, 0.2),
-			inset -2px -2px 5px rgba(255, 255, 255, 0.1),
-			5px 5px 10px rgba(0, 0, 0, 0.3),
-			-5px -5px 10px rgba(255, 255, 255, 0.1);
+		box-shadow:  11px 11px 22px #0b0c10,
+             -11px -11px 22px #2b2e3e;
 		border: none;
 		border-radius: 15px;
 	}
