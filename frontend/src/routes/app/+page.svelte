@@ -7,14 +7,16 @@
 
 <MainContainer>
 	<Topbar></Topbar>
-	<div class="container">
-		<div class="poll-container">
+	<main class="container">
+		<section class="poll-container">
 			<h1 class="main-title">Active Polls</h1>
 			<div class="poll">
 				<h1 class="poll-title">{pollTitle}</h1>
 				<p class="poll-description">Test test test 1234</p>
-				<button class="vote-btn">Choice A</button>
-				<button class="vote-btn">Choice B</button>
+				<div class="button-wrapper">
+					<button class="vote-btn">Choice A</button>
+					<button class="vote-btn">Choice B</button>
+				</div>
 			</div>
 			<div class="poll">
 				<h1 class="poll-title">{pollTitle}</h1>
@@ -22,9 +24,9 @@
 			<div class="poll">
 				<h1 class="poll-title">{pollTitle}</h1>
 			</div>
-		</div>
+		</section>
 		<div class="right-side">
-			<div class="small-box">
+			<section id="voting-history" class="small-box">
 				<h1>Your Voting History</h1>
 				<div class="voted-poll">
 					<h2>Test Poll 1</h2>
@@ -38,11 +40,16 @@
 					<h2>Test Poll 3</h2>
 					<p>Poll to test the voting function</p>
 				</div>
-			</div>
-			<div class="small-box"></div>
-			<div class="small-box"></div>
+			</section>
+			<section id="total-voted" class="small-box">
+				<h1>Total polls you have voted:</h1>
+				<div class="count-wrapper">
+					<p class="count">43</p>
+				</div>
+			</section>
+			<!-- <div class="small-box"></div> -->
 		</div>
-	</div>
+	</main>
 </MainContainer>
 
 <style>
@@ -97,10 +104,15 @@
 		color: var(--text-primary);
 	}
 	.poll-description {
+		margin-top: 1rem;
 		color: var(--text-secondary);
 	}
+	.button-wrapper {
+		display: flex;
+		flex-direction: row;
+	}
 	.vote-btn {
-		margin-top: 1rem;
+		margin-top: 2rem;
 		margin-right: 1rem;
 		padding: 1rem 5rem;
 		font-size: 1rem;
@@ -118,8 +130,6 @@
 	}
 	.small-box {
 		width: 30rem;
-		/* height: 30rem; */
-		background-color: aqua;
 		border-radius: 18px;
 		background-color: var(--nord-dark);
 		flex: 1;
@@ -135,20 +145,42 @@
 			-2px -2px 10px #45ffcb;
 		padding: 2rem;
 	}
-	.small-box h1 {
-		color: var(--text-primary);
-	}
-	.small-box h2{
-		color: var(--text-secondary);
-	}
-	.small-box p{
-		color: var(--text-secondary);
-	}
-	.voted-poll{
+	.voted-poll {
 		padding-top: 1rem;
 		padding-bottom: 1rem;
 		border-bottom: 2px solid var(--neon);
 	}
 	#voting-history {
+		display: flex;
+		flex-direction: column;
+	}
+	#voting-history h1 {
+		color: var(--text-primary);
+	}
+	#voting-history h2 {
+		color: var(--text-secondary);
+	}
+	#voting-history p {
+		color: var(--text-secondary);
+	}
+	#total-voted {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#total-voted h1{
+		color: var(--text-primary);
+	}
+	.count-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: 1;
+		width: 100%;
+	}
+	.count {
+		font-size: 10rem;
+		color: var(--neon);
+		font-weight: bold;
 	}
 </style>
