@@ -14,7 +14,7 @@
 		height: 100vh;
 		width: 100%;
 		background-color: var(--bg-black);
-		background-image: url('ffflux.svg');
+		background-image: url('/ffflux.svg');
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: contain;
