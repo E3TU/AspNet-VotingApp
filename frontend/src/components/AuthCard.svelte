@@ -52,8 +52,8 @@
 		width: 35rem;
 		height: 45rem;
 		background-color: var(--nord-dark);
-		box-shadow:  11px 11px 22px #0b0c10,
-             -11px -11px 22px #2b2e3e;
+		box-shadow:  10px 10px 20px #0d0e11,
+             -10px -10px 20px #353843;
 		border: none;
 		border-radius: 15px;
 	}
