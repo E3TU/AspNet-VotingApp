@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Topbar from '../../../components/Topbar.svelte';
 	import MainContainer from '../../../components/MainContainer.svelte';
+	import Icon from '@iconify/svelte';
 </script>
 
 <MainContainer>
@@ -13,10 +14,25 @@
 				<div class="divider"></div>
 				<input placeholder="Option 1" />
 				<input placeholder="Option 2" />
+				<button id="create-poll-btn">Create Poll</button>
 			</div>
 		</div>
 		<div class="manage-polls">
 			<h1 class="manage-polls-heading">Manage Polls</h1>
+			<div class="active-polls-wrapper">
+				<div class="active-poll">
+					<div class="left-side">
+						<h1 class="active-poll-heading">Test</h1>
+						<p class="active-indicator">
+							<Icon icon="nrk:check-active" width="24" height="24" />Active
+						</p>
+					</div>
+					<div class="right-side">
+						<button class="active-poll-btn"><Icon icon="material-symbols:edit-outline" width="24" height="24" />Edit</button>
+						<button class="active-poll-btn"><Icon icon="material-symbols:delete-outline" width="24" height="24" />Delete</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </MainContainer>
@@ -33,7 +49,6 @@
 	.create-polls {
 		display: flex;
 		flex-direction: column;
-		/* align-items: center; */
 		background-color: var(--nord-dark);
 		height: 40rem;
 		flex: 1;
@@ -46,14 +61,14 @@
 		color: var(--text-primary);
 		margin: 2rem;
 	}
-	.input-wrapper{
+	.input-wrapper {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		flex: 1;
 		gap: 1rem;
 	}
-	input{
+	input {
 		padding: 1rem;
 		background-color: var(--nord-dark-alternative);
 		border: 2px solid #fff;
@@ -63,19 +78,34 @@
 		outline: none;
 		color: var(--text-primary);
 	}
-	input::placeholder{
+	input::placeholder {
 		color: var(--text-secondary);
 	}
-	input:focus{
+	input:focus {
 		border: 2px solid var(--neon);
 	}
-	.divider{
+	.divider {
 		width: 90%;
 		height: 0.2rem;
 		background-color: var(--neon);
 		border-radius: 30px;
 	}
+	#create-poll-btn {
+		padding: 1.25rem 5rem;
+		border-radius: 30px;
+		font-size: 1rem;
+		border: none;
+		background-color: var(--neon);
+		color: var(--text-primary);
+		box-shadow:
+			0 8px 24px rgba(6, 9, 12, 0.6),
+			0 0 30px var(--neon-glow);
+		cursor: pointer;
+		margin-top: 1rem;
+	}
 	.manage-polls {
+		display: flex;
+		flex-direction: column;
 		background-color: var(--nord-dark);
 		flex: 3;
 		border-radius: 18px;
@@ -85,9 +115,59 @@
 	}
 	.manage-polls-heading {
 		color: var(--text-primary);
-		margin: 2rem;
+		margin: 3rem 5rem;
 	}
-	hr{
-		border-top: 2px solid var(--neon);
+	.active-polls-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		flex: 1;
+		/* background-color: #45ffcb; */
+	}
+	.active-poll {
+		display: flex;
+		flex-direction: row;
+		background-color: var(--nord-dark-alternative);
+		width: 90%;
+		height: 10rem;
+		border-radius: 18px;
+		box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+		padding: 1rem 2rem;
+	}
+	.active-poll-heading {
+		color: var(--text-primary);
+		/* margin: 2rem; */
+	}
+	.active-indicator {
+		display: inline-flex;
+		align-items: center;
+		color: var(--neon);
+		margin-top: 1rem;
+		gap: 0.25rem;
+	}
+	.left-side{
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
+	.right-side{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-end;
+		flex: 1;
+		gap: 1rem;
+	}
+	.active-poll-btn{
+		border-radius: 30px;
+		border: 2px solid var(--neon);
+		background-color: transparent;
+		color: var(--text-primary);
+		padding: 0.75rem 2rem;
+		display: inline-flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 0.25rem;
+		font-size: 0.9rem;
 	}
 </style>
