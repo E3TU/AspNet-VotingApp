@@ -117,6 +117,7 @@
 		padding: 1rem 5rem;
 		font-size: 1rem;
 		background-color: var(--neon);
+		color: var(--text-primary);
 		border: none;
 		border-radius: 30px;
 		box-shadow:
