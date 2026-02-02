@@ -8,10 +8,10 @@ body {
 	--bg-black: #0a0a0a;
 	--text-primary: #ffffff;
 	--text-secondary: rgba(255, 255, 255, 0.549);
-	--nord-dark: #1b1d27;
-	--nord-dark-alternative: #252835; 
-	--nord-light: #333b58;
+	--nord-dark: #21232a;
+	--nord-dark-alternative: #2c2e34; 
+	--nord-light: #212639;
 	--dark-gray: #202020;
-	--neon: #2be77f;
-	--neon-glow: rgba(43, 231, 128, 0.741);
+	--neon: #2ebe6f;
+	--neon-glow: rgba(46, 190, 111, 0.74);
 }
