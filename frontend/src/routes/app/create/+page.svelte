@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Topbar from '../../../components/Topbar.svelte';
 	import MainContainer from '../../../components/MainContainer.svelte';
-	import Icon from '@iconify/svelte';
+	import Icon, { calculateSize } from '@iconify/svelte';
 </script>
 
 <MainContainer>
@@ -18,7 +18,12 @@
 			</div>
 		</div>
 		<div class="manage-polls">
-			<h1 class="manage-polls-heading">Manage Polls</h1>
+			<div class="poll-stats-wrapper">
+				<h1 class="manage-polls-heading">Manage Polls</h1>
+				<div class="poll-stats">
+					<p class="total-polls">Total Polls: 15</p>
+				</div>
+			</div>
 			<div class="active-polls-wrapper">
 				<div class="active-poll">
 					<div class="left-side">
@@ -28,8 +33,28 @@
 						</p>
 					</div>
 					<div class="right-side">
-						<button class="active-poll-btn"><Icon icon="material-symbols:edit-outline" width="24" height="24" />Edit</button>
-						<button class="active-poll-btn"><Icon icon="material-symbols:delete-outline" width="24" height="24" />Delete</button>
+						<button id="edit-btn" class="active-poll-btn"
+							><Icon icon="material-symbols:edit-outline" width="24" height="24" />Edit</button
+						>
+						<button id="delete-btn" class="active-poll-btn"
+							><Icon icon="material-symbols:delete-outline" width="24" height="24" />Delete</button
+						>
+					</div>
+				</div>
+				<div class="active-poll">
+					<div class="left-side">
+						<h1 class="active-poll-heading">Test</h1>
+						<p class="inactive-indicator">
+							<Icon icon="icomoon-free:blocked" width="24" height="24" />Closed
+						</p>
+					</div>
+					<div class="right-side">
+						<button id="edit-btn" class="active-poll-btn"
+							><Icon icon="material-symbols:edit-outline" width="24" height="24" />Edit</button
+						>
+						<button id="delete-btn" class="active-poll-btn"
+							><Icon icon="material-symbols:delete-outline" width="24" height="24" />Delete</button
+						>
 					</div>
 				</div>
 			</div>
@@ -113,9 +138,23 @@
 			2px 2px 10px #115c33,
 			-2px -2px 10px #45ffcb;
 	}
+	.poll-stats-wrapper {
+		display: flex;
+		flex-direction: row;
+		padding: 3rem 5rem;
+		justify-content: space-between;
+	}
+	.poll-stats{
+		background-color: var(--nord-dark-alternative);
+		border-radius: 18px;
+		padding: 1rem;
+	}
+	.total-polls{
+		color: var(--text-primary);
+	}
 	.manage-polls-heading {
 		color: var(--text-primary);
-		margin: 3rem 5rem;
+		/* margin: 3rem 5rem; */
 	}
 	.active-polls-wrapper {
 		display: flex;
@@ -133,6 +172,7 @@
 		border-radius: 18px;
 		box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 		padding: 1rem 2rem;
+		margin-top: 2rem;
 	}
 	.active-poll-heading {
 		color: var(--text-primary);
@@ -145,12 +185,19 @@
 		margin-top: 1rem;
 		gap: 0.25rem;
 	}
-	.left-side{
+	.inactive-indicator {
+		display: inline-flex;
+		align-items: center;
+		color: var(--warning-red);
+		margin-top: 1rem;
+		gap: 0.25rem;
+	}
+	.left-side {
 		display: flex;
 		flex-direction: column;
 		flex: 1;
 	}
-	.right-side{
+	.right-side {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -158,7 +205,7 @@
 		flex: 1;
 		gap: 1rem;
 	}
-	.active-poll-btn{
+	.active-poll-btn {
 		border-radius: 30px;
 		border: 2px solid var(--neon);
 		background-color: transparent;
@@ -169,5 +216,15 @@
 		align-items: center;
 		gap: 0.25rem;
 		font-size: 0.9rem;
+		cursor: pointer;
+		transition: 0.5s;
+	}
+	#edit-btn:hover {
+		color: var(--neon);
+		transition: 0.5s;
+	}
+	#delete-btn:hover {
+		color: var(--warning-red);
+		transition: 0.5s;
 	}
 </style>
