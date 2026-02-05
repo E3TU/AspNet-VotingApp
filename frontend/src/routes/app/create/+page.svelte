@@ -148,6 +148,8 @@
 		background-color: var(--nord-dark-alternative);
 		border-radius: 18px;
 		padding: 1rem;
+				box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+
 	}
 	.total-polls{
 		color: var(--text-primary);
