@@ -5,11 +5,11 @@
 <header class="topbar">
 	<nav class="navbar">
 		<ul class="nav-links">
-			<li>Voting</li>
-			<li>Poll Creation</li>
+			<li><a href="/app/voting">Voting</a></li>
+			<li><a href="/app/create">Poll Creation</a></li>
 		</ul>
 		<button id="user-btn"
-			><Icon class="user-icon" icon="ix:user-profile-filled" width="64" height="64"></Icon></button
+			><Icon class="user-icon" icon="ix:user-profile-filled" width="64" height="64"></Icon><Icon class="arrow-icon" icon="iconamoon:arrow-down-2" width="32" height="32" /></button
 		>
 	</nav>
 </header>
@@ -40,20 +40,26 @@
 		gap: 2rem;
 		padding-right: 5rem;
 	}
-	.nav-links li {
-		color: var(--text-primary);
+	.nav-links li a {
 		font-size: 1.25rem;
 		cursor: pointer;
 		transition: 0.5s;
+		text-decoration: none;
+		color: var(--text-primary);
 	}
-	.nav-links li:hover {
+	.nav-links li a:hover {
 		color: var(--neon);
 		transition: 0.5s;
 	}
 	:global(.user-icon) {
 		color: var(--neon);
 	}
+	:global(.arrow-icon) {
+		color: var(--text-primary);
+	}
 	#user-btn {
+		display: flex;
+		align-items: center;
 		background-color: transparent;
 		border: none;
 		padding-right: 3rem;
