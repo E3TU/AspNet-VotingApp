@@ -1,5 +1,11 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
+
+	// Dropdown Menu
+	let isExpanded: boolean = false;
+	function clickHandler() {
+		isExpanded = !isExpanded;
+	}
 </script>
 
 <header class="topbar">
@@ -8,9 +14,18 @@
 			<li><a href="/app/voting">Voting</a></li>
 			<li><a href="/app/create">Poll Creation</a></li>
 		</ul>
-		<button id="user-btn"
-			><Icon class="user-icon" icon="ix:user-profile-filled" width="64" height="64"></Icon><Icon class="arrow-icon" icon="iconamoon:arrow-down-2" width="32" height="32" /></button
-		>
+
+		<Icon class="user-icon" icon="ix:user-profile-filled" width="64" height="64"></Icon>
+		<button onclick={clickHandler} class="dropdown-btn">
+			<Icon class="arrow-icon" icon="iconamoon:arrow-down-2" width="32" height="32"></Icon>
+		</button>
+		{#if isExpanded}
+			<div class="dropdown">
+				<div class="dropdown-items">
+					<a>Settings</a>
+				</div>
+			</div>
+		{/if}
 	</nav>
 </header>
 
@@ -56,13 +71,32 @@
 	}
 	:global(.arrow-icon) {
 		color: var(--text-primary);
+		margin-right: 2rem;
 	}
-	#user-btn {
+	.dropdown-btn {
 		display: flex;
 		align-items: center;
 		background-color: transparent;
 		border: none;
-		padding-right: 3rem;
+		cursor: pointer;
+	}
+	.dropdown {
+		position: absolute;
+		margin-top: 6rem;
+		margin-right: 6rem;
+	}
+
+	.dropdown-items {
+		position: absolute;
+		background-color: var(--nord-dark-alternative);
+		border-radius: 18px;
+	}
+
+	.dropdown-items a {
+		color: var(--text-primary);
+		padding: 1.25rem;
+		text-decoration: none;
+		display: flex;
 		cursor: pointer;
 	}
 </style>
