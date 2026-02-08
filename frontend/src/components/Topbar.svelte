@@ -12,7 +12,7 @@
 	<nav class="navbar">
 		<ul class="nav-links">
 			<li><a href="/app/voting">Voting</a></li>
-			<li><a href="/app/create">Poll Creation</a></li>
+			<li><a href="/app/createpoll">Poll Creation</a></li>
 		</ul>
 
 		<Icon class="user-icon" icon="ix:user-profile-filled" width="64" height="64"></Icon>
@@ -22,7 +22,7 @@
 		{#if isExpanded}
 			<div class="dropdown">
 				<div class="dropdown-items">
-					<a>Settings</a>
+					<a href="/app/settings">Settings</a>
 				</div>
 			</div>
 		{/if}
@@ -83,7 +83,7 @@
 	.dropdown {
 		position: absolute;
 		margin-top: 6rem;
-		margin-right: 6rem;
+		margin-right: 7rem;
 	}
 
 	.dropdown-items {
