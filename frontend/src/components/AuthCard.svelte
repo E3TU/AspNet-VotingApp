@@ -1,16 +1,4 @@
 <script lang="ts">
-	interface Field {
-		name: string;
-		label: string;
-		type: string;
-		placeholder?: string;
-		required?: boolean;
-	}
-	interface Props {
-		title?: string;
-		fields?: Field[];
-		onSubmit?: (data: Record<string, string>) => void;
-	}
 	let { title = 'Form', fields = [], onSubmit = () => {} } = $props();
 	let formData = $state<Record<string, string>>({});
 	$effect(() => {
